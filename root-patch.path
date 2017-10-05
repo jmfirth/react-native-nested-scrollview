@@ -1,0 +1,42 @@
+--- node_modules/react-native-nested-scrollview/android/build.gradle
++++ node_modules/react-native-nested-scrollview/android/build.gradle
+@@ -2,7 +2,7 @@ apply plugin: "com.android.library"
+
+ android {
+     compileSdkVersion 24
+-    buildToolsVersion "23.0.3"
++    buildToolsVersion "25.0.3"
+
+     defaultConfig {
+         minSdkVersion 16
+--- node_modules/react-native-nested-scrollview/android/src/main/java/com/mohtada/nestedscrollview/ReactNestedScrollViewHelper.java
++++ node_modules/react-native-nested-scrollview/android/src/main/java/com/mohtada/nestedscrollview/ReactNestedScrollViewHelper.java
+@@ -68,6 +68,8 @@ public class ReactNestedScrollViewHelper {
+                 scrollEventType,
+                 scrollView.getScrollX(),
+                 scrollView.getScrollY(),
++                    0.0f, // TODO: Compute velocityX
++                    0.0f, // TODO: Compute velocityY
+                 contentView.getWidth(),
+                 contentView.getHeight(),
+                 scrollView.getWidth(),
+--- node_modules/react-native-nested-scrollview/android/src/main/java/com/mohtada/nestedscrollview/ReactNestedScrollViewManager.java
++++ node_modules/react-native-nested-scrollview/android/src/main/java/com/mohtada/nestedscrollview/ReactNestedScrollViewManager.java
+@@ -166,7 +166,6 @@ public class ReactNestedScrollViewManager
+             .put(ScrollEventType.SCROLL.getJSEventName(), MapBuilder.of("registrationName", "onScroll"))
+             .put(ScrollEventType.BEGIN_DRAG.getJSEventName(), MapBuilder.of("registrationName", "onScrollBeginDrag"))
+             .put(ScrollEventType.END_DRAG.getJSEventName(), MapBuilder.of("registrationName", "onScrollEndDrag"))
+-            .put(ScrollEventType.ANIMATION_END.getJSEventName(), MapBuilder.of("registrationName", "onScrollAnimationEnd"))
+             .put(ScrollEventType.MOMENTUM_BEGIN.getJSEventName(), MapBuilder.of("registrationName", "onMomentumScrollBegin"))
+             .put(ScrollEventType.MOMENTUM_END.getJSEventName(), MapBuilder.of("registrationName", "onMomentumScrollEnd"))
+             .build();
+--- node_modules/react-native-nested-scrollview/android/src/main/java/com/mohtada/nestedscrollview/ReactNestedScrollViewPackage.java
++++ node_modules/react-native-nested-scrollview/android/src/main/java/com/mohtada/nestedscrollview/ReactNestedScrollViewPackage.java
+@@ -16,7 +16,6 @@ public class ReactNestedScrollViewPackage implements ReactPackage {
+         return Collections.emptyList();
+     }
+
+-    @Override
+     public List<Class<? extends JavaScriptModule>> createJSModules() {
+         return Collections.emptyList();
+     }
