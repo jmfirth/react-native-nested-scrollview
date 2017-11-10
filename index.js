@@ -626,7 +626,7 @@ if (Platform.OS === 'android') {
     };
     AndroidScrollView = requireNativeComponent('RCTNestedScrollView', ScrollView, nativeOnlyProps);
     AndroidHorizontalScrollView = requireNativeComponent(
-        'AndroidHorizontalScrollView',
+        'RCTNestedHorizontalScrollView',
         ScrollView,
         nativeOnlyProps
     );
