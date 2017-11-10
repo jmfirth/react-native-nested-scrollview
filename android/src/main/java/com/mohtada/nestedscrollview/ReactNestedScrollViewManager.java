@@ -59,6 +59,12 @@ public class ReactNestedScrollViewManager
         return new ReactNestedScrollView(context, mFpsListener);
     }
 
+    @Override
+    public void flashScrollIndicators(ReactNestedScrollView scrollView) {
+        // @TODO
+        // scrollView.flashScrollIndicators();
+    }
+
     @ReactProp(name = "scrollEnabled", defaultBoolean = true)
     public void setScrollEnabled(ReactNestedScrollView view, boolean value) {
         view.setScrollEnabled(value);
