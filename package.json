@@ -18,6 +18,7 @@
     "url": "https://github.com/mohtada-h/react-native-nested-scrollview.git"
   },
   "dependencies": {
+    "create-react-class": "^15.6.2",
     "prop-types": "^15.5.10"
   },
   "devDependencies": {
