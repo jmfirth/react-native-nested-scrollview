@@ -27,9 +27,9 @@ const {
     requireNativeComponent,
 } = require('react-native');
 
-const ViewStylePropTypes = require('react-native/Libraries/Components/View/ViewStylePropTypes');
-const StyleSheetPropType = require('react-native/Libraries/StyleSheet/StyleSheetPropType');
-const ColorPropType = require('react-native/Libraries/StyleSheet/ColorPropType');
+const ViewStylePropTypes = require('react-native/Libraries/DeprecatedPropTypes/DeprecatedViewStylePropTypes');
+const StyleSheetPropType = require('react-native/Libraries/DeprecatedPropTypes/DeprecatedStyleSheetPropType');
+const ColorPropType = require('react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType');
 const flattenStyle = require('react-native/Libraries/StyleSheet/flattenStyle');
 const ScrollResponder = require('react-native/Libraries/Components/ScrollResponder');
 const processDecelerationRate = require('react-native/Libraries/Components/ScrollView/processDecelerationRate');
